@@ -1,18 +1,12 @@
 import React from 'react'
-import CSSTransition from 'react-addons-css-transition-group'
-require('./animation.css')
+import CommentList from './CommentList'
 
 export default (props) => {
-    const { isOpen, body } = props
-    const bodyEl = isOpen ? <p key={body}>{body}</p> : null
+    const { isOpen, article } = props
+    if (!isOpen) return <span />
     return (
-        <CSSTransition
-            transitionName="animation"
-            transitionAppear={true}
-            transitionAppearTimeout = {500}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}>
-            {bodyEl}
-        </CSSTransition>
-    )
+        <div>
+            <p>{article.body}</p>
+            <CommentList comments = {article.comments} />
+        </div>)
 }

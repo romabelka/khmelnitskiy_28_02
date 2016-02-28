@@ -17,7 +17,7 @@ class Article extends Component {
     };
 
     render() {
-        const { article: { body, title }, isOpen, toggleOpen} = this.props
+        const { article, isOpen, toggleOpen} = this.props
         const options = ['yes', 'no'].map((opt) => {
             return {
                 label: opt.toUpperCase(),
@@ -26,9 +26,8 @@ class Article extends Component {
         })
         return (
             <div ref = "article">
-                <Title onClick = {toggleOpen}>{title}</Title>
-                <Body isOpen = {isOpen} body = {body}/>
-                <Select options = {options} multi={true}/>
+                <Title onClick = {toggleOpen}>{article.title}</Title>
+                <Body isOpen = {isOpen} article = {article}/>
             </div>
         )
     }

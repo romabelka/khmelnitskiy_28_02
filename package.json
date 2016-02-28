@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrent --kill-others \"webpack-dev-server --hot --inline\" \"node simple_api/server.js\""
+    "dev": "webpack-dev-server --hot --inline",
+    "api": "node simple_api/server.js",
+    "start": "concurrent --kill-others \"npm run dev\" \"npm run api\""
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,8 @@
     "react-select": "^0.9.1",
     "react-addons-css-transition-group": "^0.14.7",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "react": "^0.14.7",

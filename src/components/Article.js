@@ -1,46 +1,29 @@
 import React, { Component, PropTypes } from 'react'
 import Title from './Title'
 import Body from './BodyStateless'
+import toggleOpen from '../HOC/toggleOpen'
 
 class Article extends Component {
 
     static propTypes = {
-        article: PropTypes.object.isRequired
+        article: PropTypes.object.isRequired,
+
+        //-------from toggleOpen---------
+        open: PropTypes.func,
+        close: PropTypes.func,
+        toggleOpen: PropTypes.func,
+        isOpen: PropTypes.bool
     };
-
-/*
-    constructor(props) {
-        super(props)
-        this.state = {
-            isOpen: false
-        }
-    }
-*/
-    state = {
-        isOpen: false
-    };
-
-    componentDidMount() {
-        console.log(this.refs)
-    }
-
 
     render() {
-        const { article: { body, title }} = this.props
-        const { isOpen } = this.state
+        const { article: { body, title }, isOpen, toggleOpen} = this.props
         return (
             <div ref = "article">
-                <Title onClick = {this.toggleOpen}>{title}</Title>
+                <Title onClick = {toggleOpen}>{title}</Title>
                 <Body isOpen = {isOpen} body = {body}/>
             </div>
         )
     }
-
-    toggleOpen = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        })
-    };
 }
 
-export default Article
+export default toggleOpen(Article)

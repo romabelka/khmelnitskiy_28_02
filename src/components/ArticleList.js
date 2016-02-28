@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Article from './ArticleOld'
-
+import Article from './Article'
 class ArticleList extends Component {
     render() {
         const articleItems = this.props.articles.map((article) => {

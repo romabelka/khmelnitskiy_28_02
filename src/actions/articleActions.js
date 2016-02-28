@@ -6,3 +6,11 @@ export function deleteArticle(id) {
         data: { id }
     })
 }
+
+export function loadAllArticles() {
+    AppDispatcher.dispatch({
+        type: 'LOAD_ALL_ARTICLES_START'
+    })
+
+
+}

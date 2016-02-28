@@ -25,9 +25,10 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.0",
     "babel-preset-stage-0": "^6.5.0",
+    "concurrently": "^2.0.0",
     "css-loader": "^0.23.1",
-    "react-select": "^0.9.1",
     "react-addons-css-transition-group": "^0.14.7",
+    "react-select": "^0.9.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
@@ -35,6 +36,7 @@
   "dependencies": {
     "events": "^1.1.0",
     "flux": "^2.1.1",
+    "jquery": "^2.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }

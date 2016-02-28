@@ -22,7 +22,7 @@ class ArticleList extends Component {
 
     render() {
         const articleItems = this.state.articles.map((article) => {
-            return <li key = {article.id}>
+            return <li key = {article.id} style={ {color: 'red'} }>
                 <a href = "#" onClick = {this.removeArticle(article.id)}>remove article</a>
                 <Article article = {article}/>
             </li>

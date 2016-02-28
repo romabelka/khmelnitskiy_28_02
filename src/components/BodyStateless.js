@@ -9,6 +9,7 @@ export default (props) => {
         <CSSTransition
             transitionName="animation"
             transitionAppear={true}
+            transitionAppearTimeout = {500}
             transitionEnterTimeout={500}
             transitionLeaveTimeout={300}>
             {bodyEl}
